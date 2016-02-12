@@ -18917,7 +18917,8 @@ $.api = $.fn.api = function(parameters) {
               }
               setTimeout(function() {
                 if( module.is.abortedRequest(xhr) ) {
-                  module.request.rejectWith(context, [xhr, 'aborted', httpMessage]);
+                  // Remove unnecessary error message as suggested here: https://github.com/Semantic-Org/Semantic-UI/issues/2779.
+                  // module.request.rejectWith(context, [xhr, 'aborted', httpMessage]);
                 }
                 else {
                   module.request.rejectWith(context, [xhr, 'error', status, httpMessage]);
